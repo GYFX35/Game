@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Researcher Telemetry</title>
+</head>
+<body>
+    <h1>User Interaction Telemetry</h1>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>User ID</th>
+            <th>Event Type</th>
+            <th>Timestamp</th>
+            <th>Details</th>
+        </tr>
+        {% for event in events %}
+        <tr>
+            <td>{{ event.id }}</td>
+            <td>{{ event.user_id }}</td>
+            <td>{{ event.event_type }}</td>
+            <td>{{ event.timestamp }}</td>
+            <td>{{ event.details }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <p><a href="{{ url_for('main.dashboard') }}">Back to Dashboard</a></p>
+</body>
+</html>

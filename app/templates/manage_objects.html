@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Manage Game Objects</title>
+</head>
+<body>
+    <h1>Manage Game Objects (PaaS)</h1>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Color</th>
+            <th>Position (X, Y, Z)</th>
+        </tr>
+        {% for obj in objects %}
+        <tr>
+            <td>{{ obj.id }}</td>
+            <td>{{ obj.name }}</td>
+            <td>{{ obj.color }}</td>
+            <td>({{ obj.position_x }}, {{ obj.position_y }}, {{ obj.position_z }})</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <p><a href="{{ url_for('main.dashboard') }}">Back to Dashboard</a></p>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>E-commerce Shop</title>
+</head>
+<body>
+    <h1>AR Game Shop</h1>
+    <p>Welcome to the shop! Buy skins for your AR boxes.</p>
+
+    <div style="display: flex; gap: 20px;">
+        {% for product in products %}
+        <div style="border: 1px solid #ccc; padding: 10px;">
+            <h3>{{ product.name }}</h3>
+            <p>Price: {{ product.price }} coins</p>
+            <div style="width: 50px; height: 50px; background-color: {{ product.color }}; margin-bottom: 10px;"></div>
+            <button onclick="buy('{{ product.name }}')">Buy</button>
+        </div>
+        {% endfor %}
+    </div>
+
+    <p><a href="{{ url_for('main.dashboard') }}">Back to Dashboard</a></p>
+
+    <script>
+        function buy(name) {
+            alert('You "bought" the ' + name + '! (Integration with payment gateway placeholder)');
+        }
+    </script>
+</body>
+</html>
