@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>IT Admin Status</title>
+</head>
+<body>
+    <h1>System Health Monitor (ITsaas)</h1>
+    <ul>
+        <li><strong>OS:</strong> {{ status.platform }} {{ status.platform_release }}</li>
+        <li><strong>CPU Usage:</strong> {{ status.cpu_usage }}</li>
+        <li><strong>Memory Usage:</strong> {{ status.memory_usage }}</li>
+        <li><strong>Total Registered Users:</strong> {{ status.total_users }}</li>
+        <li><strong>Total Telemetry Events:</strong> {{ status.total_events }}</li>
+    </ul>
+    <p><a href="{{ url_for('main.dashboard') }}">Back to Dashboard</a></p>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+</head>
+<body>
+    <h1>Welcome, {{ name }}!</h1>
+    <p>Role: {{ role }}</p>
+
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('index') }}">Play AR Game</a></li>
+            {% if role == 'developer' or role == 'admin' %}
+            <li><a href="/paas/manage">Manage Game Objects (PaaS)</a></li>
+            {% endif %}
+            {% if role == 'researcher' or role == 'admin' %}
+            <li><a href="/research/telemetry">View Telemetry (Researcher)</a></li>
+            {% endif %}
+            {% if role == 'guru' or role == 'admin' %}
+            <li><a href="/shop">Manage Shop (E-commerce Guru)</a></li>
+            {% endif %}
+            {% if role == 'admin' %}
+            <li><a href="/admin/status">System Status (ITsaas)</a></li>
+            {% endif %}
+            <li><a href="{{ url_for('auth.logout') }}">Logout</a></li>
+        </ul>
+    </nav>
+</body>
+</html>
